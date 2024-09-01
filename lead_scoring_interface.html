@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lead Scoring Interface</title>
+</head>
+<body>
+    <h1>Lead Scoring Interface</h1>
+    <form id="leadForm">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+        <label for="balance">Balance:</label>
+        <input type="number" id="balance" name="balance" required><br><br>
+        <label for="previous">Previous:</label>
+        <input type="number" id="previous" name="previous" required><br><br>
+        <label for="poutcome">Poutcome:</label>
+        <input type="text" id="poutcome" name="poutcome" required><br><br>
+        <label for="job">Job:</label>
+        <input type="text" id="job" name="job" required><br><br>
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+    <h2>Results:</h2>
+    <pre id="result"></pre>
+    <script>
+        function submitForm() {
+            const formData = new FormData(document.getElementById('leadForm'));
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            fetch('https://lead-score-backend.onrender.com/score/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                document.getElementById('result').textContent = JSON.stringify(result, null, 2);
+            })
+            .catch(error => {
+                document.getElementById('result').textContent = 'Error: ' + error;
+            });
+        }
+    </script>
+</body>
+</html>
