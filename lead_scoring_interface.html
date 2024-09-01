@@ -9,16 +9,55 @@
     <form id="leadForm">
         <label for="age">Age:</label>
         <input type="number" id="age" name="age" required><br><br>
-        <label for="balance">Balance:</label>
-        <input type="number" id="balance" name="balance" required><br><br>
-        <label for="previous">Previous:</label>
-        <input type="number" id="previous" name="previous" required><br><br>
-        <label for="poutcome">Poutcome:</label>
-        <input type="text" id="poutcome" name="poutcome" required><br><br>
+
         <label for="job">Job:</label>
         <input type="text" id="job" name="job" required><br><br>
-        <button type="button" onclick="submitForm()">Submit</button>
+
+        <label for="marital">Marital Status:</label>
+        <input type="text" id="marital" name="marital" required><br><br>
+
+        <label for="education">Education:</label>
+        <input type="text" id="education" name="education" required><br><br>
+
+        <label for="default">Has Credit Default:</label>
+        <input type="text" id="default" name="default" required><br><br>
+
+        <label for="balance">Balance:</label>
+        <input type="number" id="balance" name="balance" required><br><br>
+
+        <label for="housing">Housing Loan:</label>
+        <input type="text" id="housing" name="housing" required><br><br>
+
+        <label for="loan">Personal Loan:</label>
+        <input type="text" id="loan" name="loan" required><br><br>
+
+        <label for="contact">Contact Communication Type:</label>
+        <input type="text" id="contact" name="contact" required><br><br>
+
+        <label for="day_of_week">Day of the Week:</label>
+        <input type="text" id="day_of_week" name="day_of_week" required><br><br>
+
+        <label for="month">Month:</label>
+        <input type="text" id="month" name="month" required><br><br>
+
+        <label for="duration">Duration:</label>
+        <input type="number" id="duration" name="duration" required><br><br>
+
+        <label for="campaign">Number of Contacts in Campaign:</label>
+        <input type="number" id="campaign" name="campaign" required><br><br>
+
+        <label for="pdays">Number of Days since Last Contact:</label>
+        <input type="number" id="pdays" name="pdays" required><br><br>
+
+        <label for="previous">Number of Contacts before this Campaign:</label>
+        <input type="number" id="previous" name="previous" required><br><br>
+
+        <label for="poutcome">Outcome of Previous Marketing Campaign:</label>
+        <input type="text" id="poutcome" name="poutcome" required><br><br>
+
+        <input type="button" value="Submit" onclick="submitForm()">
     </form>
+    
     <h2>Results:</h2>
     <pre id="result"></pre>
     <script>
